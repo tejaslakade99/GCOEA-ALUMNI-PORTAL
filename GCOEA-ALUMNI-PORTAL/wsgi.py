@@ -1,5 +1,5 @@
 """
-WSGI config for GCOEA_ALUMNI_PORTAL project.
+WSGI config for GCOEA-ALUMNI-PORTAL project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'GCOEA_ALUMNI_PORTAL.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'GCOEA-ALUMNI-PORTAL.settings')
 
 application = get_wsgi_application()
