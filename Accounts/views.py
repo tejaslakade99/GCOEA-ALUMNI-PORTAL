@@ -3,7 +3,7 @@ from django.contrib import messages
 from django.contrib.auth.models import User
 from django.http import HttpResponseRedirect, HttpResponse
 from django.contrib.auth import authenticate, login, logout
-from .models import Profile
+from Accounts.models import Admin
 from django.conf import settings
 from django.core.mail import send_mail
 
@@ -18,22 +18,27 @@ def select_role(request):
     if request.method == "POST":
         role = request.POST.get('role')
         if role == 'Hod':
-            return redirect('register_admin')
-        return HttpResponse("Jay Matadi")
+            return redirect('register-admin')
 
     return render(request, 'Accounts/choice-page.html')
 
 
 def register_admin(request):
-    form = {}
+    if request.method == "POST":
+        pass
+
     return render(request,'Accounts/register.html', form)
 
 def register_faculty(request):
-    form = {}
+    if request.method == "POST":
+        pass
+
     return render(request, 'Accounts/register.html', form)
 
 def register_alumni(request):
-    form = {}
+    if request.method == "POST":
+        pass
+
     return render(request, 'Accounts/register.html', form)
 
 # Create your views here.
