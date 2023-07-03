@@ -16,7 +16,7 @@
 <body class="text-bg-light" style="margin: 0;background: rgb(238,238,238);">
     <!-- Start: Navbar Centered Brand (Dark) -->
     <nav class="navbar navbar-dark navbar-expand-md sticky-top bg-dark py-3" style="width: 100%;padding: 0;">
-        <div class="container"><a class="navbar-brand d-flex justify-content-around align-items-center" style="width: 10%;" href="/"><span style="font-size: 20px;">GCOEA&nbsp;</span></a>
+        <div class="container"><a class="navbar-brand d-flex justify-content-around align-items-center" style="width: 10%;" href="/"><span style="font-size: 20px;">{{ request.user }}&nbsp;</span></a>
             <ul class="navbar-nav justify-content-around me-auto" style="width: 45%;">
                 <li class="nav-item dropdown d-none d-sm-none d-md-inline-block d-lg-inline-block d-xl-inline-block d-xxl-inline-block"><a class="nav-link d-inline-block" aria-expanded="false" data-bs-toggle="dropdown" href="#">Faculty</a>
                     <div class="dropdown-menu dropdown-menu-dark"><a class="dropdown-item" href="faculty.html">Faculty Members</a><a class="dropdown-item" href="#">Research Papers</a><a class="dropdown-item" href="#">Achivements</a><a class="dropdown-item" href="#">Shared Experience</a></div>
@@ -109,7 +109,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.2/js/widgets/widget-filter.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.2/js/widgets/widget-storage.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-    <script src="{% static 'assets/js/script.min.js?h=240b6725f617aa88729a79626bd0cf16' %}"></script>
+    <script src="{% static 'assets/js/script.min.js' %}"></script>
 </body>
 
 </html>

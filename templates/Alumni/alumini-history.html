@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block main %}
+<!-- Start: [CDRapido] Listado Socios -->
+    <div>
+        <div class="container">
+            <div class="row">
+                <div class="col" style="margin-top: 20px;">
+                    <div class="row mb-4 mb-lg-5">
+                        <div class="col-md-8 col-xl-6 text-center mx-auto">
+                            <h2 style="color: rgb(33,37,41);">Alumni History</h2>
+                            <p class="w-lg-50" style="color: rgb(141,151,173);">A rich history of former students who have achieved great things and continue to inspire others.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div>
+                        <table class="table table-hover table-bordered" id="example" cellspacing="0" width="100%">
+                            <thead>
+                                <tr>
+                                    <th>Id </th>
+                                    <th>Name</th>
+                                    <th>Branch</th>
+                                    <th>Linked In</th>
+                                    <th>Email</th>
+                                    <th>Passed Out Year</th>
+                                    <th>Estado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            {% for a in alumni %}
+                                <tr>
+                                    <td>{{ a.id }}</td>
+                                    <td>{{ a.user.first_name }} {{ a.user.last_name }}</td>
+                                    <td>{{ a.branch }}</td>
+                                    <td>{{ a.linkedin_url }}</td>
+                                    <td>{{ a.user.email }}</td>
+                                    <td>+569 87654321</td>
+                                    <td><input type="checkbox" disabled=""></td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- End: [CDRapido] Listado Socios -->
+{% endblock %}

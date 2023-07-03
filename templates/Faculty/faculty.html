@@ -1,0 +1,112 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block main %}
+<div class="col-md-8 offset-md-2" style="margin: 0;margin-top: 1rem;margin-left: 5%;margin-bottom: 1rem;">
+        <form class="custom-form">
+            <div class="row form-group">
+                <div class="col-sm-4 input-column"><select class="form-select">
+                        <optgroup label="Select Branch">
+                            <option value="12" selected="">All Branches</option>
+                            <option value="CS">Computer Science</option>
+                            <option value="IT">Information Technology</option>
+                            <option value="ENTC">Electronics and Telecommunication</option>
+                        </optgroup>
+                    </select></div>
+                <div class="col-sm-4 label-column"><label class="col-form-label" for="dropdown-input-field"></label></div>
+            </div>
+        </form>
+    </div><!-- Start: Page Heading -->
+    <div class="justify-content-xl-end align-items-xl-end" style="width: 90%;margin-left: 5%;margin-bottom: 1rem;">
+        <div><a class="btn" data-bs-toggle="collapse" aria-expanded="true" aria-controls="collapse-1" href="#collapse-1" role="button" style="min-width: 100%;margin-left: 0;text-align: center;font-size: 31px;font-weight: bold;background: rgb(255,255,255);color: rgb(33,37,41);border: 0.25px solid rgb(33,37,41);">HEAD OF DEPARTMENT&nbsp;</a>
+            <div class="collapse show" id="collapse-1">
+                <div class="row gy-4 row-cols-1 row-cols-md-2 row-cols-xl-3">
+                    {% for h in hod %}
+                    <div class="col">
+                        <div class="card"><img class="card-img-top w-100 d-block fit-cover" style="height: 300px;" src="assets/img/pexels-photo-861103.jpeg">
+                            <div class="card-body p-4">
+                                <p class="text-primary card-text mb-0">Branch - {{ h.branch }}</p>
+                                <h4 class="card-title">{{ h.user.first_name }} {{ h.user.last_name }}</h4>
+                                <p class="card-text" style="color: rgb(141,151,173);">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div><!-- End: Page Heading -->
+    <!-- Start: Page Heading -->
+    <div class="justify-content-xl-end align-items-xl-end" style="width: 90%;margin-left: 5%;margin-bottom: 1rem;">
+        <div><a class="btn" data-bs-toggle="collapse" aria-expanded="true" aria-controls="collapse-2" href="#collapse-2" role="button" style="min-width: 98%;margin-left: 0;text-align: center;font-size: 31px;font-weight: bold;background: rgb(255,255,255);border-width: 0.25px;border-color: var(--bs-btn-color);color: rgb(33,37,41);">PROFESSORS&nbsp;&nbsp;</a>
+            <div class="collapse show" id="collapse-2">
+                <div class="row gy-4 row-cols-1 row-cols-md-2 row-cols-xl-3">
+                    {% for p in pro %}
+                    <div class="col">
+                        <div class="card"><img class="card-img-top w-100 d-block fit-cover" style="height: 300px;" src="assets/img/pexels-photo-861103.jpeg?h=70685e75eef4adab8b6ef8843950a294">
+                            <div class="card-body p-4">
+                                <p class="text-primary card-text mb-0">Branch - {{ p.branch }}</p>
+                                <h4 class="card-title">{{ p.user.first_name }} {{ p.user.last_name }}</h4>
+                                <p class="card-text" style="color: rgb(141,151,173);">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div><!-- End: Page Heading -->
+    <!-- Start: Page Heading -->
+    <div class="justify-content-xl-end align-items-xl-end" style="width: 90%;margin-left: 5%;margin-bottom: 1rem;">
+        <div><a class="btn" data-bs-toggle="collapse" aria-expanded="true" aria-controls="collapse-3" href="#collapse-3" role="button" style="min-width: 98%;margin-left: 0;text-align: left;border-bottom: 2px solid var(--bs-border-color);font-size: 31px;font-weight: bold;">HEAD OF DEPARTMENT&nbsp;</a>
+            <div class="collapse show" id="collapse-3">
+                <div class="row gy-4 row-cols-1 row-cols-md-2 row-cols-xl-3">
+                    <div class="col">
+                        <div class="card"><img class="card-img-top w-100 d-block fit-cover" style="height: 300px;" src="assets/img/pexels-photo-861103.jpeg?h=70685e75eef4adab8b6ef8843950a294">
+                            <div class="card-body p-4">
+                                <p class="text-primary card-text mb-0"></p>
+                                <h4 class="card-title">James Smith</h4>
+                                <p class="card-text" style="color: rgb(141,151,173);">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card"><img class="card-img-top w-100 d-block fit-cover" style="height: 300px;" src="assets/img/pexels-photo-861103.jpeg?h=70685e75eef4adab8b6ef8843950a294">
+                            <div class="card-body p-4">
+                                <p class="text-primary card-text mb-0">Article</p>
+                                <h4 class="card-title">James Smith</h4>
+                                <p class="card-text" style="color: rgb(141,151,173);">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card"><img class="card-img-top w-100 d-block fit-cover" style="height: 300px;" src="assets/img/pexels-photo-861103.jpeg?h=70685e75eef4adab8b6ef8843950a294">
+                            <div class="card-body p-4">
+                                <p class="text-primary card-text mb-0">Article</p>
+                                <h4 class="card-title">James Smith</h4>
+                                <p class="card-text" style="color: rgb(141,151,173);">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card"><img class="card-img-top w-100 d-block fit-cover" style="height: 300px;" src="assets/img/pexels-photo-861103.jpeg?h=70685e75eef4adab8b6ef8843950a294">
+                            <div class="card-body p-4">
+                                <p class="text-primary card-text mb-0">Article</p>
+                                <h4 class="card-title">James Smith</h4>
+                                <p class="card-text" style="color: rgb(141,151,173);">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card"><img class="card-img-top w-100 d-block fit-cover" style="height: 300px;" src="assets/img/pexels-photo-861103.jpeg?h=70685e75eef4adab8b6ef8843950a294">
+                            <div class="card-body p-4">
+                                <p class="text-primary card-text mb-0">Article</p>
+                                <h4 class="card-title">James Smith</h4>
+                                <p class="card-text" style="color: rgb(141,151,173);">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- End: Page Heading -->
+{% endblock %}

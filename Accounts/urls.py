@@ -1,9 +1,9 @@
 from django.urls import path
 from Accounts.views import *
 urlpatterns = [
-#     path('login/', login_page, name="login"),
     path('role/', select_role, name="role"),
-#     path('register/', register, name="register"),
-#     path('activate/<email_token>', activate_email, name="activate_email"),
-#
+    path('register/<slug:my_role>', register_admin, name="register-admin"),
+    path('login/', login_page, name="login"),
+    path('index/', index, name="index"),
+    path('contact/', contact_us, name="contact us")
 ]
