@@ -22,6 +22,8 @@ def select_role(request):
         return HttpResponse("Jay Matadi")
 
     return render(request, 'Accounts/choice-page.html')
+
+
 def register_admin(request):
     form = {}
     return render(request,'Accounts/register.html', form)
