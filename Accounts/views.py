@@ -76,7 +76,6 @@ def login_page(request):
 
 
 def select_role(request):
-
     if request.method == "POST":
         role = request.POST.get('role')
         return redirect('register-admin', my_role=role)

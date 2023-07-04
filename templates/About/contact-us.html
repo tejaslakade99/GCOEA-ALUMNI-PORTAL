@@ -13,6 +13,7 @@
                 </div>
             </div>
             <form id="contactForm-1" action="javascript:void(0);" method="get"><input class="form-control" type="hidden" name="Introduction" value="This email was sent from www.awebsite.com"><input class="form-control" type="hidden" name="subject" value="Awebsite.com Contact Form"><input class="form-control" type="hidden" name="to" value="email@awebsite.com">
+                {% csrf_token %}
                 <div class="row">
                     <div class="col-md-6">
                         <div id="successfail-1"></div>
