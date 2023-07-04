@@ -19,24 +19,24 @@
         <div class="container"><a class="navbar-brand d-flex justify-content-around align-items-center" style="width: 10%;" href="/"><span style="font-size: 20px;">{{ request.user }}&nbsp;</span></a>
             <ul class="navbar-nav justify-content-around me-auto" style="width: 45%;">
                 <li class="nav-item dropdown d-none d-sm-none d-md-inline-block d-lg-inline-block d-xl-inline-block d-xxl-inline-block"><a class="nav-link d-inline-block" aria-expanded="false" data-bs-toggle="dropdown" href="#">Faculty</a>
-                    <div class="dropdown-menu dropdown-menu-dark"><a class="dropdown-item" href="faculty.html">Faculty Members</a><a class="dropdown-item" href="#">Research Papers</a><a class="dropdown-item" href="#">Achivements</a><a class="dropdown-item" href="#">Shared Experience</a></div>
+                    <div class="dropdown-menu dropdown-menu-dark"><a class="dropdown-item" href="{% url 'faculty' %}">Faculty Members</a><a class="dropdown-item" href="#">Research Papers</a><a class="dropdown-item" href="#">Achivements</a><a class="dropdown-item" href="#">Shared Experience</a></div>
                 </li>
                 <li class="nav-item dropdown d-none d-print-inline-block d-sm-none d-md-inline-block d-lg-inline-block d-xl-inline-block d-xxl-inline-block"><a class="nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#">About Us&nbsp;</a>
-                    <div class="dropdown-menu dropdown-menu-dark"><a class="dropdown-item" data-bss-hover-animate="tada" href="#">Gallery</a><a class="dropdown-item" data-bss-hover-animate="tada" href="contact-us.html">Contact Us</a><a class="dropdown-item" data-bss-hover-animate="tada" href="about.html">Our Team</a></div>
+                    <div class="dropdown-menu dropdown-menu-dark"><a class="dropdown-item" data-bss-hover-animate="tada" href="#">Gallery</a><a class="dropdown-item" data-bss-hover-animate="tada" href="{% url 'contact us' %}">Contact Us</a><a class="dropdown-item" data-bss-hover-animate="tada" href="{% url 'about' %}">Our Team</a></div>
                 </li>
             </ul><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-6"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse flex-grow-0 justify-content-evenly order-md-first" id="navcol-6" style="width: 45%;">
                 <ul class="navbar-nav justify-content-around me-auto" style="width: 100%;">
                     <li class="nav-item dropdown"><a class="nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#">Alumni Section</a>
-                        <div class="dropdown-menu dropdown-menu-dark"><a class="dropdown-item" href="#">Log In / Register</a><a class="dropdown-item" href="alumini-history.html">Alumni History</a><a class="dropdown-item" href="blogs.html">Alumni Blogs</a><a class="dropdown-item" href="#">Alumni Material</a><a class="dropdown-item" href="#">Achivements</a></div>
+                        <div class="dropdown-menu dropdown-menu-dark"><a class="dropdown-item" href="{% url 'login' %}">Log In / Register</a><a class="dropdown-item" href="{% url 'alumni-history' %}">Alumni History</a><a class="dropdown-item" href="blogs.html">Alumni Blogs</a><a class="dropdown-item" href="#">Alumni Material</a><a class="dropdown-item" href="#">Achivements</a></div>
                     </li>
                     <li class="nav-item dropdown"><a class="nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#">Programs</a>
-                        <div class="dropdown-menu dropdown-menu-dark"><a class="dropdown-item" href="contest.html">Contests</a><a class="dropdown-item" href="events.html">Workshop/Events</a><a class="dropdown-item" href="hirings.html">HIrings</a><a class="dropdown-item" href="college-news.html">College News</a></div>
+                        <div class="dropdown-menu dropdown-menu-dark"><a class="dropdown-item" href="{% url 'contest' %}">Contests</a><a class="dropdown-item" href="{% url 'event' %}">Workshop/Events</a><a class="dropdown-item" href="hirings.html">HIrings</a><a class="dropdown-item" href="college-news.html">College News</a></div>
                     </li>
-                    <li class="nav-item dropdown d-md-none"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#">Faculty</a>
+                    <li class="nav-item dropdown d-md-none"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="{% url 'faculty' %}">Faculty</a>
                         <div class="dropdown-menu"><a class="dropdown-item" href="#">First Item</a><a class="dropdown-item" href="#">Second Item</a><a class="dropdown-item" href="#">Third Item</a></div>
                     </li>
-                    <li class="nav-item dropdown d-md-none"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#">About Us</a>
+                    <li class="nav-item dropdown d-md-none"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="{% url 'about' %}">About Us</a>
                         <div class="dropdown-menu"><a class="dropdown-item" href="#">First Item</a><a class="dropdown-item" href="#">Second Item</a><a class="dropdown-item" href="#">Third Item</a></div>
                     </li>
                 </ul>

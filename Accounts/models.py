@@ -73,9 +73,7 @@ class FacultyProfile(models.Model):
 
 class AdminProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='admin_profile')
-    # role = models.CharField(max_length=50, choices=Role.choices)
     branch = models.CharField(max_length=50, choices=Branch.choices)
-    # admin_id = models.AutoField()
     profile_pic = models.ImageField(upload_to=user_directory_path_for_admin)
     designation = models.CharField(max_length=200)
     linkedin_url = models.URLField(max_length=200)

@@ -5,7 +5,6 @@ from django.http import HttpResponseRedirect, HttpResponse
 from django.contrib.auth import authenticate, login, logout
 from Accounts.models import *
 from django.conf import settings
-from django.core.mail import send_mail
 
 
 # Specifically Desgined Decorators
@@ -116,20 +115,3 @@ def index(request):
     return render(request, 'base.html')
 
 
-def contact_us(request):
-    if request.method == "POST":
-        name = request.POST.get('name')
-        email = request.POST.get('email')
-        primary_phone=request.POST.get('phone')
-        comments = request.POST.get('comments')
-
-        send_mail(
-            mail.send(
-                'jhonnnyinglis10@gmail.com',
-                ['recipient@example.com'],
-                subject='Hello',
-                backend='ses',
-            )
-        )
-
-    return render(request, 'Accounts/contact-us.html')

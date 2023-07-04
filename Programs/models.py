@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 
 
 class Contests(models.Model):
-    user = models.OneToOneField(User,on_delete=models.DO_NOTHING)
+    user = models.ForeignKey(User,on_delete=models.DO_NOTHING)
     contest_name = models.CharField(max_length=200)
     platform_title = models.CharField(max_length=200)
     platform_link = models.URLField(max_length=500)
@@ -15,7 +15,7 @@ class Contests(models.Model):
 
 
 class Events(models.Model):
-    user = models.OneToOneField(User,on_delete=models.DO_NOTHING)
+    user = models.ForeignKey(User,on_delete=models.DO_NOTHING)
     event_name = models.CharField(max_length=200)
     platform_title = models.CharField(max_length=200)
     platform_link = models.URLField(max_length=500)

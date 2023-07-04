@@ -1,13 +1,16 @@
 from django.shortcuts import render
 from .models import *
 from Accounts.views import *
+from datetime import datetime
+from django.db.models import Q
 # Create your views here.
 
-
+today = datetime.today()
 def contest(request):
-    contest = Contests.objects.all().order_by('contest_date')
-    is_student = StudentProfile.objects.filter(user_id=request.user).exists()
-    context = {'contests':contest, 'is_student':is_student}
+    contest = Contests.objects.all().order_by('contest_date').filter(Q(contest_date__gte=today))
+    pcontest = Contests.objects.all().order_by('contest_date').filter(Q(contest_date__lt=today))
+    is_student = StudentProfile.objects.filter(user_id=request.user.id).exists()
+    context = {'contests':contest, 'is_student':is_student,'pcontest':pcontest}
     return render(request, 'Programs/contest.html', context)
 
 
@@ -40,10 +43,17 @@ def add_contest(request):
     return render(request, 'Programs/contest-form.html')
 
 
+def delete_contest(request,contest_id):
+    contest = Contests.objects.filter(id=contest_id).first()
+    contest.delete()
+    return redirect('contest')
+
+
 def events(request):
-    event = Events.objects.all().order_by('event_date')
+    event = Events.objects.all().order_by('event_date').filter(Q(event_date__gte=today))
+    pevent = Events.objects.all().order_by('event_date').filter(Q(event_date__lt=today))
     is_student = StudentProfile.objects.filter(user_id=request.user).exists()
-    context = {'events': event, 'is_student': is_student}
+    context = {'events': event, 'is_student': is_student, 'pevents':pevent}
     return render(request, 'Programs/events.html', context)
 
 
